@@ -19,6 +19,7 @@ Route::get('/',[DashboardController::class,'index'] );
 Route::get('about',[DashboardController::class,'about'] );
 Route::get('service',[DashboardController::class,'service'] );
 Route::get('project',[DashboardController::class,'project'] );
+Route::get('contact',[DashboardController::class,'contact'] );
 
 
 // Route::get('/', function () {
