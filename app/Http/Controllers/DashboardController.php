@@ -10,22 +10,18 @@ use Auth;
 
 class DashboardController extends Controller
 {
-    //
     public function index()
     {
         return view('dashboard');
     }
 
     public function about()
-    {// tetst
-            //testsesdfsd
-    	return view('about');
+    {
+        return view('about');
     }
 
     public function service()
     {
-
-        //this is git pull testing
     	return view('service');
     }
     
