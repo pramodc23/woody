@@ -17,14 +17,15 @@ class DashboardController extends Controller
     }
 
     public function about()
-    {
-        //Session::put('testvalue', "hello world");
-
+    {// tetst
+            //testsesdfsd
     	return view('about');
     }
 
     public function service()
     {
+
+        //this is git pull testing
     	return view('service');
     }
     
