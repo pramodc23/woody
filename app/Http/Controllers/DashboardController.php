@@ -17,13 +17,13 @@ class DashboardController extends Controller
 
     public function about()
     { 
-        //this is in abount page
+        //hello world abount page
         return view('about');
     }
 
     public function service()
     {
-        //this is service page
+        //hello world service page
     	return view('service');
     }
     
