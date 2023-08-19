@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -26,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -37,4 +39,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+    protected function authenticated(Request $request, $user)
+    {
+        // Fetch the user's full details from the database
+        $fullUserDetails = User::find($user->id);
+
+        // Store the full user details in the session
+        session(['user_details' => $fullUserDetails]);
+
+        // Redirect the user to the desired page (e.g., dashboard)
+        return redirect('/');
+    }
+
+
 }
